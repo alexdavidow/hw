@@ -1,0 +1,12 @@
+Edit a Video
+<form method='post' action='/videos/<%= @row['id'] %>'> 
+	<textarea type='text' name='title' value='<%= @row['title'] %>' placeholder="Video Title" autofocus></textarea>
+	<br>
+	<textarea type='text' name='description' value='<%= @row['description'] %>' placeholder="Description"></textarea>
+	<br>
+	<textarea type='text' name='url' value='<%= @row['url'] %>' placeholder="URL"></textarea>
+	<br>
+	<textarea type='text' name='genre' value='<%= @row['genre'] %>' placeholder="Genre"></textarea>
+	<br>
+	<button>Edit Video</button>
+</form>

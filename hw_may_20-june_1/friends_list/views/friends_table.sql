@@ -1,0 +1,11 @@
+CREATE TABLE friendz 
+(
+id SERIAL4 PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+age INT,
+gender VARCHAR(8),
+image VARCHAR(1000),
+twitter VARCHAR(1000),
+github VARCHAR(1000),
+facebook VARCHAR(1000)
+);

@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: solar_systems
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  diameter   :string(255)
+#  image_url  :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: 
+  diameter: 
+  image_url: MyText
+
+two:
+  name: 
+  diameter: 
+  image_url: MyText

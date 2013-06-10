@@ -1,0 +1,13 @@
+<%= form_for @moon do |f| %>
+<div class="translucent" id="formshift">
+	<%= f.label :name %>
+	<%= f.text_field :name %><br/>
+	<%= f.label :distance %>
+	<%= f.number_field :distance %><br/>
+	<%= f.label :diameter %>
+	<%= f.number_field :diameter %><br/>
+	<%= f.label :solar_system_id %>
+	<%= f.select :solar_system_id, SolarSystem.all.map{|solar_system| [solar_system.name, solar_system.id]} %>
+	<%= f.submit %>
+</div>
+<% end %>

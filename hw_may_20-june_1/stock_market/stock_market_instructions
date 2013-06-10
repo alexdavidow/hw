@@ -1,0 +1,29 @@
+require 'yahoofinance'
+
+
+Pair program and TDD a stock management program which is capable of:
+* Create an account for client (name, balance).
+* A client can create multiple portfolios.
+* A client can buy stocks at market rate; these stocks will be added to a portfolio and the purchase amount subtracted from cash. (You cannot go to a negative cash balance).
+* A client can sell a stock. The proceeds go into his account.
+* List all client portfolios and their values (each portfolio value and sum of portfolio values) and the account balance.
+* List all stocks in a portfolio.
+* List all clients.
+ 
+**Note:**
+ 
+Each time a portfolio balance is calculated, the program needs to go out to the web and get current stock prices.
+ 
+Utilize yahoofinance gem, and require it in the necessary ruby files. For example:
+ 
+YahooFinance::get_quotes(YahooFinance::StandardQuote, 'AAPL')['AAPL'].lastTrade
+ 
+=> 453.62
+
+
+Then if you want to grab a current stock quote from Yahoo Finance's servers, use:
+YahooFinance::get_quotes(YahooFinance::StandardQuote, 'AAPL')['AAPL'].lastTrade
+where AAPL can be replaced by whichever stock symbol you want
+gem install yahoofinance
+
+in the folder, rspec ‘stock_rspec.rb’

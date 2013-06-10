@@ -1,0 +1,23 @@
+<head>
+	<title>Solar System</title>
+</head>
+<body>
+	<ul>
+		<% @solar_systems.each do |solar_system| %>
+		<li id="entries">
+			<div class="container">
+				<p>Name: <%= solar_system.name %></p>
+				<p>Diameter (in km): <%= solar_system.diameter %></p>
+				<% if solar_system.moons.present? %>
+				<p>Moons: <% solar_system.moons.each do |moon| %>
+							<%= moon.name %> 
+					<% end %></p>
+				<% end %>
+				<p><img src="<%= solar_system.image_url %>"></p>
+				<button class="editdelete"><%= link_to 'delete', solar_system_path(solar_system), method: :delete, :confirm => "do you really want to delete this?" %></button>
+				<button class="editdelete"><%= link_to 'edit', edit_solar_system_path(solar_system) %></button>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+</body>

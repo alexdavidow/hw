@@ -1,0 +1,17 @@
+<div class="translucent" id="formshift">
+<%= form_for @astronaut do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br/>
+	<%= f.label :trips_to_space %>
+	<%= f.number_field :trips_to_space %><br/>
+	<%= f.label :img_url %>
+	<%= f.text_field :img_url %><br/>
+
+Moons in this database:
+	<% @moons.each do |moon| %>
+	<span><%= moon.name %></span>
+	<%= check_box_tag 'astronaut[moon_ids][]', moon.id, moon.in?(@astronaut.moons.to_a) %>
+<% end %>
+	<%= f.submit %>
+</div>
+<% end %>

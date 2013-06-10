@@ -1,0 +1,15 @@
+<ul class="indexshift">
+	<% @astronauts.each do |astronaut| %>
+	<li id="entries" class="translucent">
+		Astronaut Name: <%= link_to astronaut.name, astronaut %><br>
+		Times in Space: <%= astronaut.trips_to_space %><br>
+
+		<%= astronaut.name %> has visited <% astronaut.moons.each do |moon| %>
+			<%= moon.name %> <% end %>
+		<img src="<%= astronaut.img_url %>">
+			<%= link_to 'Edit', edit_astronaut_path(astronaut), method: 'get' %>
+			<%= link_to 'Delete', astronaut_path(astronaut), method: 'delete' %>
+	</li><br>
+	<% end %>
+
+</ul>

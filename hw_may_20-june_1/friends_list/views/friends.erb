@@ -1,0 +1,16 @@
+<div  id="container2">
+	<section>
+		<% @results.each do |row| %>
+		<article>
+		<div id="image"><a href="<%=row["image"]%>" target='-blank'><img src=" <%=row["image"]%>" ></a></div>
+		<div id="name"> Name: <%= row["name"] %></div>
+		<div id="age"> Age: <%= row["age"] %></div>
+		<div id="gender"> Gender: <%= row["gender"] %></div>
+		<div id="twitter"> <i class="icon-twitter-sign"></i> <a href="<%=row["twitter"]%>" target='-blank'> <%= row["twitter"] %></a></div>
+		<div id="github"> <i class="icon-github-sign"></i> <a href="<%=row["github"]%>" target='-blank'> <%= row["github"] %></a></div>
+		<div id="facebook"> <i class="icon-facebook-sign"></i> <a href="<%=row["facebook"]%>" target='-blank'> <%= row["facebook"] %></a></div>
+		<br>
+		</article>
+		<% end %>
+	</section>
+</div>

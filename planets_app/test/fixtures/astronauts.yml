@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  trips_to_space: 
+  img_url: MyText
+
+two:
+  name: MyString
+  trips_to_space: 
+  img_url: MyText

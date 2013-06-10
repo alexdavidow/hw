@@ -1,0 +1,11 @@
+require 'yahoofinance'
+quote_type = YahooFinance::StandardQuote
+quote_symbols = "DIS,ORCL"
+
+   
+YahooFinance::get_quotes( quote_type, quote_symbols ) do |qt|
+	puts "Quoting: #{qt.symbol}"
+	puts qt
+end
+
+   

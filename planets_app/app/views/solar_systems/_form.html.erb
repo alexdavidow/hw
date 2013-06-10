@@ -1,0 +1,17 @@
+<%= form_for @solar_system do |f| %>
+<div class="translucent" id="formshift">
+	<%= f.label :name %>
+	<%= f.text_field :name %><br />
+	<%= f.label :diameter %>
+	<%= f.text_field :diameter %><br />
+	<%= f.label :image_url %>
+	<%= f.text_field :image_url %><br>
+
+Moons in this database:
+	<% @moons.each do |moon| %>
+	<span><%= moon.name %></span>
+	<%= check_box_tag 'solar_system[moon_ids][]', moon.id, moon.in?(@solar_system.moons.to_a) %>
+<% end %>
+	<%= f.submit %>
+</div>
+<% end %>

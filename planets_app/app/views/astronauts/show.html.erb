@@ -1,0 +1,11 @@
+<body>
+	<ul class="indexshift">
+		<li id="entries" class="translucent">
+			Astronaut Name: <%= @astronaut.name %><br>
+			Times in Space: <%= @astronaut.trips_to_space %><br>
+			<img src="<%= @astronaut.img_url %>">
+			<%= link_to 'Edit', edit_astronaut_path(@astronaut), method: 'get' %>
+			<%= link_to 'Delete', astronaut_path(@astronaut), method: 'delete' %>
+		</li><br>
+	</ul>
+</body>
