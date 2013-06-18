@@ -1,0 +1,72 @@
+<html>
+<head>
+  <title>Javascript Subway Calculator</title>
+</head>
+<body>
+  CHOO CHOO
+  <script>
+  var n = ['ts', '34th', '28th-n', '23rd-n', 'us'];
+  var l = ['8th', '6th', 'us', '3rd', '1st'];
+  var s = ['gc', '33rd', '28th-s', '23rd-s', 'us'];
+
+  var mta = {}
+
+  mta['n'] = n;
+  mta['l'] = l;
+  mta['s'] = s;
+
+  entry_line = prompt('Welcome to New York! What train line would you like to take: n, l or s?')
+  // entry_station = prompt('At which station are you entering:')
+
+    switch(entry_line) {
+      case 'n':
+      entry_station = prompt("At which station are you entering: ts, 34th, 28th-n, 23rd-n, us")
+      break
+      case 'l':
+      entry_station = prompt("At which station are you entering: 8th, 6th, us, 3rd, 1st")
+      break
+      case 's':
+      entry_station = prompt("At which station are you entering: gc, 33rd, 8th-s, 23rd-s, us")
+      break
+      default:
+      console.log('Please enter a valid subway line: n, l or s')
+    }
+
+    exit_line = prompt('On which train line is your destination: n, l or s?')
+
+      switch(exit_line) {
+      case 'n':
+      exit_station = prompt("At which station are you exiting: ts, 34th, 28th-n, 23rd-n, us")
+      break
+      case 'l':
+      exit_station = prompt("At which station are you exiting: 8th, 6th, us, 3rd, 1st")
+      break
+      case 's':
+      exit_station = prompt("At which station are you exiting: gc, 33rd, 8th-s, 23rd-s, us")
+      break
+      default:
+      console.log('Please enter a valid subway line: n, l or s')
+    }
+
+    if (entry_line != exit_line) {
+      entry_station_index = mta[entry_line].indexOf(entry_station)
+      entry_station_junction = mta[entry_line].indexOf('us')
+      first_leg_length = Math.abs(entry_station_index - entry_station_junction)
+
+      exit_station_index = mta[exit_line].indexOf(exit_station)
+      exit_station_junction = mta[exit_line].indexOf('us')
+      second_leg_length = Math.abs(exit_station_index - exit_station_junction)
+
+      total_trip = first_leg_length + second_leg_length
+      }
+      else {
+        entry_station_index = mta[entry_line].indexOf(entry_station)
+        exit_station_index = mta[exit_line].indexOf(exit_station)
+
+        total_trip = Math.abs(entry_station_index - exit_station_index)
+      }
+
+      alert("Your trip will be a total of " + total_trip + " stops")
+  </script>
+</body>
+</html>
