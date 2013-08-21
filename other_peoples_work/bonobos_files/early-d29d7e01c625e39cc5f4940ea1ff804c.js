@@ -1,0 +1,1 @@
+window.Bonobos={Models:{},Collections:{},collections:{},Routers:{},routers:{},Settings:{},Views:{},Helpers:{},Const:{},console:{}};
